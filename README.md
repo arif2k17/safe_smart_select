@@ -258,7 +258,7 @@ SafeSmartSelect<T>.[single|multiple]({
 });
 ```
 
-`choiceItems` can be input directly as in the example below, more info about `S2Choice` can be found on the [API Reference](https://pub.dev/documentation/smart_select/latest/smart_select/S2Choice-class.html)
+`choiceItems` can be input directly as in the example below, more info about `S2Choice` can be found on the [API Reference](https://pub.dev/documentation/safe_smart_select/latest/safe_smart_select/S2Choice-class.html)
 
 ```dart
 SafeSmartSelect<T>.[single|multiple](
@@ -302,7 +302,7 @@ Please follow these [example](https://github.com/arif2k17/safe_smart_select/blob
 
 ## Modal Configuration
 
-More info about `S2ModalConfig` can be found on the [API Reference](https://pub.dev/documentation/smart_select/latest/smart_select/S2ModalConfig-class.html)
+More info about `S2ModalConfig` can be found on the [API Reference](https://pub.dev/documentation/safe_smart_select/latest/safe_smart_select/S2ModalConfig-class.html)
 
 ```dart
 // available configuration
@@ -444,7 +444,7 @@ S2ModalHeaderStyle({
 
 ## Choices Configuration
 
-More info about `S2ChoiceConfig` can be found on the [API Reference](https://pub.dev/documentation/smart_select/latest/smart_select/S2ChoiceConfig-class.html)
+More info about `S2ChoiceConfig` can be found on the [API Reference](https://pub.dev/documentation/safe_smart_select/latest/safe_smart_select/S2ChoiceConfig-class.html)
 
 ```dart
 // Available option to configure choices
