@@ -1048,19 +1048,27 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
 
   /// Returns the modal body widget
   Widget get modalBody {
+    final _widgets = <Widget>[];
+    if (modalConfig.isFullPage != true) {
+      _widgets.add(modalHeader!);
+    }
+    if (modalDivider != null) {
+      _widgets.add(modalDivider!);
+    }
+    _widgets.add(Flexible(
+      child: choiceList,
+      fit: modalConfig.isFullPage == true ? FlexFit.tight : FlexFit.loose,
+    ));
+    if (modalDivider != null) {
+      _widgets.add(modalDivider!);
+    }
+    if(modalFooter != null){
+      _widgets.add(modalFooter!);
+    }
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
-      children: (<Widget?>[
-        modalConfig.isFullPage != true ? modalHeader : null,
-        modalDivider,
-        Flexible(
-          fit: modalConfig.isFullPage == true ? FlexFit.tight : FlexFit.loose,
-          child: choiceList,
-        ),
-        modalDivider,
-        modalFooter,
-      ]..removeWhere((child) => child == null)) as List<Widget>,
+      children: _widgets,
     );
   }
 
@@ -1274,10 +1282,10 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
   /// Returns the default modal actions widgets
   List<Widget> get defaultModalActions {
     final _actions = <Widget>[];
-    if(modalFilterToggle != null){
+    if (modalFilterToggle != null) {
       _actions.add(modalFilterToggle!);
     }
-    if(modalConfig.useConfirm && !filter!.activated){
+    if (modalConfig.useConfirm && !filter!.activated) {
       _actions.add(confirmButton);
     }
     return _actions;
