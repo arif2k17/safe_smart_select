@@ -377,14 +377,14 @@ class SmartSelect<T> extends StatefulWidget {
     String placeholder = 'Select one',
     T? selectedValue,
     S2Choice<T>? selectedChoice,
-    S2SingleSelectedResolver<T>? selectedResolver,
+    S2SingleSelectedResolver<T?>? selectedResolver,
     ValueChanged<S2SingleSelected<T>>? onChange,
     S2ChoiceSelect<S2SingleState<T>, S2Choice<T>>? onSelect,
     S2ModalOpen<S2SingleState<T>>? onModalOpen,
     S2ModalClose<S2SingleState<T>>? onModalClose,
     S2ModalWillOpen<S2SingleState<T>>? onModalWillOpen,
     S2ModalWillClose<S2SingleState<T>>? onModalWillClose,
-    S2Validation<S2SingleChosen<T>>? validation,
+    S2Validation<S2SingleChosen<T?>>? validation,
     S2Validation<S2SingleChosen<T>>? modalValidation,
     List<S2Choice<T>>? choiceItems,
     S2ChoiceLoader<T>? choiceLoader,
@@ -1259,25 +1259,28 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
                 modalError,
               ],
             ),
-      actions: modalActions as List<Widget>?,
+      actions: modalActions as List<Widget>,
     );
   }
 
   /// Returns the modal action widgets
-  List<Widget?> get modalActions {
-    return (_customModalActions ?? defaultModalActions)
-      ..removeWhere((child) => child == null);
+  List<Widget> get modalActions {
+    return _customModalActions ?? defaultModalActions;
   }
 
   /// Returns the custom modal actions widgets
   List<Widget>? get _customModalActions;
 
   /// Returns the default modal actions widgets
-  List<Widget?> get defaultModalActions {
-    return <Widget?>[
-      modalFilterToggle,
-      modalConfig.useConfirm && !filter!.activated ? confirmButton : null,
-    ];
+  List<Widget> get defaultModalActions {
+    final _actions = <Widget>[];
+    if(modalFilterToggle != null){
+      _actions.add(modalFilterToggle!);
+    }
+    if(modalConfig.useConfirm && !filter!.activated){
+      _actions.add(confirmButton);
+    }
+    return _actions;
   }
 
   /// Returns the choices selector widget
@@ -1700,7 +1703,7 @@ class S2SingleState<T> extends S2State<T?> {
 
   /// State of choice(s) selection in the modal
   @override
-  S2SingleSelection<T>? selection;
+  S2SingleSelection<T?>? selection;
 
   @override
   void onChange() {
@@ -1766,7 +1769,7 @@ class S2SingleState<T> extends S2State<T?> {
   @override
   void resolveSelection() async {
     // set the initial selection
-    selection = S2SingleSelection<T>(
+    selection = S2SingleSelection<T?>(
       initial: selected!.choice,
       validation: modalValidation,
     )

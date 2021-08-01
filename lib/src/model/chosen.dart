@@ -290,7 +290,7 @@ class S2SingleSelected<T> extends S2Selected<T> with S2SingleChosenData<T> {
 
   T? _value;
 
-  S2Choice<T>? _choice;
+  S2Choice<T?>? _choice;
 
   /// a `String` to return in `toString` if the `title` is empty
   @override
@@ -298,7 +298,7 @@ class S2SingleSelected<T> extends S2Selected<T> with S2SingleChosenData<T> {
 
   /// A function used to validate the selection
   @override
-  final S2Validation<S2SingleChosen<T>>? validation;
+  final S2Validation<S2SingleChosen<T?>>? validation;
 
   @override
   void validate() {
@@ -308,11 +308,11 @@ class S2SingleSelected<T> extends S2Selected<T> with S2SingleChosenData<T> {
 
   /// Function to resolve [choice] from [value]
   @override
-  S2SingleSelectedResolver<T>? resolver;
+  S2SingleSelectedResolver<T?>? resolver;
 
   @override
   void resolve({
-    S2SingleSelectedResolver<T>? defaultResolver,
+    S2SingleSelectedResolver<T?>? defaultResolver,
   }) async {
     if (isResolved) return null;
 
@@ -321,7 +321,7 @@ class S2SingleSelected<T> extends S2Selected<T> with S2SingleChosenData<T> {
     notifyListeners();
 
     try {
-      _choice = await resolver!.call(_value!);
+      _choice = await resolver?.call(_value);
     } catch (e) {
       throw e;
     } finally {
@@ -331,7 +331,7 @@ class S2SingleSelected<T> extends S2Selected<T> with S2SingleChosenData<T> {
   }
 
   @override
-  set choice(S2Choice<T>? val) {
+  set choice(S2Choice<T?>? val) {
     _choice = val;
     _value = null;
     validate();
@@ -346,7 +346,7 @@ class S2SingleSelected<T> extends S2Selected<T> with S2SingleChosenData<T> {
 
   /// Returns a single selected [S2Choice]
   @override
-  S2Choice<T>? get choice {
+  S2Choice<T?>? get choice {
     return _choice;
   }
 

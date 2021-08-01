@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_select/smart_select.dart';
+import 'package:safe_smart_select/smart_select.dart';
 import '../choices.dart' as choices;
 
 class FeaturesModalValidation extends StatefulWidget {
