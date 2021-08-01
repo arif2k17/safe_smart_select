@@ -16,7 +16,7 @@ class _FeaturesChoicesThemeState extends State<FeaturesChoicesTheme> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Smartphones',
           selectedValue: _smartphones,
           onChange: (selected) {

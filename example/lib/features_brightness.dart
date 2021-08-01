@@ -18,7 +18,7 @@ class _FeaturesBrightnessState extends State<FeaturesBrightness> {
 
   @override
   Widget build(BuildContext context) {
-    return SmartSelect<int>.single(
+    return SafeSmartSelect<int>.single(
       title: 'Brightness',
       selectedValue: ThemePatrol.of(context).themeMode.index,
       onChange: (selected) {

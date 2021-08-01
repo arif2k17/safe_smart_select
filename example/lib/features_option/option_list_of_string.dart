@@ -44,7 +44,7 @@ class _FeaturesOptionListOfStringState
           child: Row(
             children: <Widget>[
               Expanded(
-                child: SmartSelect<int>.multiple(
+                child: SafeSmartSelect<int>.multiple(
                   title: 'Categories',
                   selectedValue: _categories,
                   onChange: (selected) {
@@ -72,7 +72,7 @@ class _FeaturesOptionListOfStringState
                 child: VerticalDivider(),
               ),
               Expanded(
-                child: SmartSelect<int>.single(
+                child: SafeSmartSelect<int>.single(
                   title: 'Sort By',
                   selectedValue: _sort,
                   onChange: (selected) {

@@ -18,7 +18,7 @@ class _FeaturesModalHeaderState extends State<FeaturesModalHeader> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Month',
           selectedValue: _month,
           onChange: (selected) => setState(() => _month = selected.value),
@@ -45,7 +45,7 @@ class _FeaturesModalHeaderState extends State<FeaturesModalHeader> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Frameworks',
           selectedValue: _framework,
           onChange: (selected) {
@@ -75,7 +75,7 @@ class _FeaturesModalHeaderState extends State<FeaturesModalHeader> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Super Hero',
           selectedValue: _hero,
           onChange: (selected) => setState(() => _hero = selected.value),

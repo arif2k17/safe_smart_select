@@ -19,7 +19,7 @@ class _FeaturesChoicesGroupedState extends State<FeaturesChoicesGrouped> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Smartphones',
           placeholder: 'Choose one',
           selectedValue: _smartphone,
@@ -50,7 +50,7 @@ class _FeaturesChoicesGroupedState extends State<FeaturesChoicesGrouped> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Cars',
           placeholder: 'Choose one or more',
           selectedValue: _car,

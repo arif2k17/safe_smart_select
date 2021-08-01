@@ -17,7 +17,7 @@ class _FeaturesModalSelectorState extends State<FeaturesModalSelector> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Fruit',
           selectedValue: _fruit,
           onChange: (selected) {
@@ -86,7 +86,7 @@ class _FeaturesModalSelectorState extends State<FeaturesModalSelector> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
             title: 'Phones',
             placeholder: 'Choose one',
             selectedValue: _smartphone,
@@ -174,7 +174,7 @@ class _FeaturesModalSelectorState extends State<FeaturesModalSelector> {
               );
             }),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Car',
           selectedValue: _car,
           onChange: (selected) => setState(() => _car = selected.value),

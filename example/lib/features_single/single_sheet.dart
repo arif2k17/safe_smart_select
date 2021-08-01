@@ -16,7 +16,7 @@ class _FeaturesSingleSheetState extends State<FeaturesSingleSheet> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'OS',
           selectedValue: _os,
           choiceItems: choices.os,
@@ -35,7 +35,7 @@ class _FeaturesSingleSheetState extends State<FeaturesSingleSheet> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Super Hero',
           selectedValue: _hero,
           choiceItems: choices.heroes,

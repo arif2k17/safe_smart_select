@@ -16,7 +16,7 @@ class _FeaturesSinglePopupState extends State<FeaturesSinglePopup> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Fruit',
           selectedValue: _fruit,
           choiceItems: choices.fruits,
@@ -30,7 +30,7 @@ class _FeaturesSinglePopupState extends State<FeaturesSinglePopup> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Frameworks',
           selectedValue: _framework,
           choiceItems: choices.frameworks,

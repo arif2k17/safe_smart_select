@@ -16,7 +16,7 @@ class _FeaturesTileTrailingState extends State<FeaturesTileTrailing> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Days',
           selectedValue: _day,
           choiceItems: choices.days,
@@ -29,7 +29,7 @@ class _FeaturesTileTrailingState extends State<FeaturesTileTrailing> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Month',
           selectedValue: _month,
           choiceItems: choices.months,

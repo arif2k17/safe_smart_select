@@ -24,7 +24,7 @@ class _FeaturesOptionListOfMapState extends State<FeaturesOptionListOfMap> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Days',
           selectedValue: _day,
           onChange: (selected) => setState(() => _day = selected.value),

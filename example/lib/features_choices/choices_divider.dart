@@ -16,7 +16,7 @@ class _FeaturesChoicesDividerState extends State<FeaturesChoicesDivider> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Car',
           placeholder: 'Choose one',
           selectedValue: _car,
@@ -42,7 +42,7 @@ class _FeaturesChoicesDividerState extends State<FeaturesChoicesDivider> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Smartphones',
           placeholder: 'Choose one',
           selectedValue: _smartphone,

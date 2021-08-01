@@ -16,7 +16,7 @@ class _FeaturesMultiPopupState extends State<FeaturesMultiPopup> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Fruit',
           selectedValue: _fruit,
           onChange: (selected) => setState(() => _fruit = selected.value),
@@ -35,7 +35,7 @@ class _FeaturesMultiPopupState extends State<FeaturesMultiPopup> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Frameworks',
           selectedValue: _framework,
           onChange: (selected) {

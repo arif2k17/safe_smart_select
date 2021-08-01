@@ -24,7 +24,7 @@ class _FeaturesOptionAsyncState extends State<FeaturesOptionAsync> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Admin',
           selectedValue: _user,
           onChange: (selected) => setState(() => _user = selected.value),
@@ -66,7 +66,7 @@ class _FeaturesOptionAsyncState extends State<FeaturesOptionAsync> {
           initialData: [],
           future: this._countriesMemoizer.runOnce(_getCountries),
           builder: (context, snapshot) {
-            return SmartSelect<String>.multiple(
+            return SafeSmartSelect<String>.multiple(
               title: 'Country',
               selectedValue: _countries,
               modalFilter: true,
@@ -93,7 +93,7 @@ class _FeaturesOptionAsyncState extends State<FeaturesOptionAsync> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Invite Friends',
           selectedValue: _invitations,
           // selectedResolver: (values) {
@@ -138,7 +138,7 @@ class _FeaturesOptionAsyncState extends State<FeaturesOptionAsync> {
             );
           },
         ),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Cat Breeds',
           selectedValue: _breeds,
           // selectedResolver: (values) {

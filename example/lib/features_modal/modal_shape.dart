@@ -16,7 +16,7 @@ class _FeaturesModalShapeState extends State<FeaturesModalShape> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Frameworks',
           selectedValue: _framework,
           onChange: (selected) {
@@ -48,7 +48,7 @@ class _FeaturesModalShapeState extends State<FeaturesModalShape> {
           },
         ),
         Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Super Hero',
           selectedValue: _hero,
           onChange: (selected) => setState(() => _hero = selected.value),

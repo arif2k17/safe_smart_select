@@ -17,7 +17,7 @@ class _FeaturesMultiChipsState extends State<FeaturesMultiChips> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Car',
           selectedValue: _car,
           onChange: (selected) => setState(() => _car = selected.value),
@@ -43,7 +43,7 @@ class _FeaturesMultiChipsState extends State<FeaturesMultiChips> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Smartphones',
           selectedValue: _smartphone,
           onChange: (selected) {
@@ -75,7 +75,7 @@ class _FeaturesMultiChipsState extends State<FeaturesMultiChips> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Days',
           selectedValue: _day,
           onChange: (selected) => setState(() => _day = selected.value),

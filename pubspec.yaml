@@ -1,6 +1,6 @@
 name: safe_smart_select
 description: Easily convert your usual single/multiple select or dropdown into page, dialog, or bottom sheet with various choice input such as radio, checkbox, switch, chips, or custom widget.
-homepage:
+homepage: https://github.com/arif2k17/safe_smart_select
 version: 1.0.0
 
 environment:

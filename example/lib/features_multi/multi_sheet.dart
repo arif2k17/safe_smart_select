@@ -16,7 +16,7 @@ class _FeaturesMultiSheetState extends State<FeaturesMultiSheet> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'OS',
           selectedValue: _os,
           onChange: (selected) => setState(() => _os = selected.value),
@@ -35,7 +35,7 @@ class _FeaturesMultiSheetState extends State<FeaturesMultiSheet> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Super Hero',
           selectedValue: _hero,
           onChange: (selected) => setState(() => _hero = selected.value),

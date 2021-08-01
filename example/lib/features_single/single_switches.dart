@@ -17,7 +17,7 @@ class _FeaturesSingleSwitchesState extends State<FeaturesSingleSwitches> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Car',
           selectedValue: _car,
           onChange: (selected) => setState(() => _car = selected.value),
@@ -43,7 +43,7 @@ class _FeaturesSingleSwitchesState extends State<FeaturesSingleSwitches> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Smartphones',
           selectedValue: _smartphone,
           onChange: (selected) {
@@ -70,7 +70,7 @@ class _FeaturesSingleSwitchesState extends State<FeaturesSingleSwitches> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Days',
           selectedValue: _days,
           onChange: (selected) => setState(() => _days = selected.value),

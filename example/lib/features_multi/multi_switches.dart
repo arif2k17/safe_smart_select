@@ -17,7 +17,7 @@ class _FeaturesMultiSwitchesState extends State<FeaturesMultiSwitches> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Car',
           selectedValue: _car,
           onChange: (selected) => setState(() => _car = selected.value),
@@ -43,7 +43,7 @@ class _FeaturesMultiSwitchesState extends State<FeaturesMultiSwitches> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Smartphones',
           selectedValue: _smartphone,
           onChange: (selected) {
@@ -70,7 +70,7 @@ class _FeaturesMultiSwitchesState extends State<FeaturesMultiSwitches> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Days',
           selectedValue: _days,
           onChange: (selected) => setState(() => _days = selected.value),

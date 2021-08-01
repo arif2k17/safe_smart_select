@@ -18,7 +18,7 @@ class _FeaturesModalValidationState extends State<FeaturesModalValidation> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Days',
           selectedValue: _day,
           onChange: (selected) => setState(() => _day = selected.value),
@@ -29,7 +29,7 @@ class _FeaturesModalValidationState extends State<FeaturesModalValidation> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Days',
           selectedValue: _days,
           onChange: (selected) => setState(() => _days = selected.value),
@@ -65,7 +65,7 @@ class _FeaturesModalValidationState extends State<FeaturesModalValidation> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Fruit',
           selectedValue: _fruit,
           onChange: (selected) => setState(() => _fruit = selected.value),

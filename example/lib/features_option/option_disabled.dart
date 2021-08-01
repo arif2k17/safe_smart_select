@@ -42,7 +42,7 @@ class _FeaturesOptionDisabledState extends State<FeaturesOptionDisabled> {
           child: Row(
             children: <Widget>[
               Expanded(
-                child: SmartSelect<int>.multiple(
+                child: SafeSmartSelect<int>.multiple(
                   title: 'Categories',
                   selectedValue: _categories,
                   onChange: (selected) {
@@ -71,7 +71,7 @@ class _FeaturesOptionDisabledState extends State<FeaturesOptionDisabled> {
                 child: VerticalDivider(),
               ),
               Expanded(
-                child: SmartSelect<int>.single(
+                child: SafeSmartSelect<int>.single(
                   selectedValue: _sort,
                   onChange: (selected) {
                     setState(() => _sort = selected.value);

@@ -1,24 +1,7 @@
-![Pub Version](https://img.shields.io/pub/v/smart_select) ![GitHub](https://img.shields.io/github/license/davigmacode/flutter_smart_select)
+![Pub Version](https://img.shields.io/pub/v/safe_smart_select) ![GitHub](https://img.shields.io/github/license/arif2k17/safe_smart_select)
 
-<a href="https://www.buymeacoffee.com/davigmacode" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="195" height="55"></a>
 
 SafeSmartSelect allows you to easily convert your usual form select or dropdown into dynamic page, popup dialog, or sliding bottom sheet with various choices input such as radio, checkbox, switch, chips, or even custom input. Supports single and multiple choice. Inspired by Smart Select component from [Framework7](https://framework7.io/).
-
-## What's New in Version 4.x.x
-
-- Customizable every part on modal widget (header, footer, searchbar, confirm button, searchbar toggle) using style configuration or widget builder
-- Validate before confirm
-- Auto search on type
-- Accent marks handler on search
-- Highlight search result
-- Chips tile widget
-- Grid choice layout
-- Horizotal or vertical choice list scroll direction
-- Simplify class name and enum
-- Configurations supports `copyWith` and `merge`
-- Use `StatefulWidget` as state management
-- Easy shortcut to define configuration
-- Soft depends to other package
 
 ## To Do
 
@@ -27,78 +10,6 @@ SafeSmartSelect allows you to easily convert your usual form select or dropdown 
 - Custom search handler
 - Choice items pagination (pull to refresh and pull to load more)
 - Add more test
-
-## Migration from 4.0.0 to 4.2.0
-
-- `modalValidation` function nows should return `String` to indicates the changes value is not valid and `null` or empty `String` to indicates the changes value is valid
-
-- To display tile with chips use param `S2Tile.body` and `S2TileChips`, instead of `S2ChipsTile`
-
-## Migration from 3.0.x to 4.0.0
-
-- The parameter `options` is removed, instead use `choiceItems`
-
-- Simplify class name and enum
-
-  - `SafeSmartSelectTile` to `S2Tile`
-  - `SafeSmartSelectOption` to `S2Choice`
-  - `SafeSmartSelectChoiceConfig` to `S2ChoiceConfig`
-  - `SafeSmartSelectChoiceStyle` to `S2ChoiceStyle`
-  - `SafeSmartSelectChoiceType` to `S2ChoiceType`
-  - `SafeSmartSelectModalConfig` to `S2ModalConfig`
-  - `SafeSmartSelectModalStyle` to `S2ModalStyle`
-  - `SafeSmartSelectModalHeaderStyle` to `S2ModalHeaderStyle`
-  - `SafeSmartSelectModalType` to `S2ModalType`
-
-- The parameter `builder` now is a collection of builder (`S2SingleBuilder` or `S2MultiBuilder`), instead use `tileBuilder` to create trigger tile widget.
-
-- The parameters `dense`, `enabled`, `isLoading`, `isTwoLine`, `leading`, `loadingText`, `padding`, `selected`, `trailing` is removed from `SafeSmartSelect` class, instead use `builder.tile` or `tileBuilder` and return `S2Tile` widget, it's has all these parameters.
-
-- The parameter `onChange` nows return `S2SingleState state` or `S2MultiState state` instead of `T value` or `List<T> value`
-
-- The parameter `choiceConfig.useWrap` is removed, instead use `choiceConfig.layout = S2ChoiceLayout.wrap`
-
-- The parameter `choiceConfig.builder` moved to `builder.choice` or `choiceBuilder`
-
-- The parameter `choiceConfig.titleBuilder` moved to `builder.choiceTitle` or `choiceTitleBuilder`
-
-- The parameter `choiceConfig.subtitleBuilder` moved to `builder.choiceSubtitle` or `choiceSubtitleBuilder`
-
-- The parameter `choiceConfig.secondaryBuilder` moved to `builder.choiceSecondary` or `choiceSecondaryBuilder`
-
-- The parameter `choiceConfig.dividerBuilder` moved to `builder.choiceDivider` or `choiceDividerBuilder`
-
-- The parameter `choiceConfig.emptyBuilder` moved to `builder.choiceEmpty` or `choiceEmptybuilder`
-
-- The parameter `choiceConfig.glowingOverscrollIndicatorColor` is removed, instead use `choiceConfig.overscrollColor`
-
-- The parameter `choiceConfig.spacing` and `choiceConfig.runSpacing` moved to `choiceConfig.style.spacing` and `choiceConfig.style.runSpacing`
-
-- The parameter `choiceConfig.useCheckmark` moved to `choiceConfig.style.showCheckmark`
-
-- The parameter `choiceConfig.padding` moved to `choiceConfig.style.wrapperPadding`
-
-- The default of grouped choice is not using sticky header now, instead use `groupBuilder` like this:
-
-  ```dart
-  dependencies:
-    sticky_headers: "^0.1.8"
-  ```
-
-  ```dart
-  import 'package:sticky_headers/sticky_headers.dart';
-
-  SafeSmartSelect<T>.single/multiple(
-    ...,
-    ...,
-    choiceGroupBuilder: (context, header, choices) {
-      return StickyHeader(
-        header: header,
-        content: choices,
-      );
-    },
-  );
-  ```
 
 # Preview
 
@@ -114,19 +25,19 @@ SafeSmartSelect allows you to easily convert your usual form select or dropdown 
   <tr>
     <td align="left">Modal Type</td>
     <td align="center">
-      <image alt="Single Choice Modal" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/single-modal.gif"/>
+      <image alt="Single Choice Modal" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/single-modal.gif"/>
     </td>
     <td align="center">
-      <image alt="Multiple Choice Modal" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/multiple-modal.gif"/>
+      <image alt="Multiple Choice Modal" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/multiple-modal.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Chips Widget</td>
     <td align="center">
-      <image alt="Single Choice Chips" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/single-chips.gif"/>
+      <image alt="Single Choice Chips" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/single-chips.gif"/>
     </td>
     <td align="center">
-      <image alt="Multiple Choice Chips" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/multiple-chips.gif"/>
+      <image alt="Multiple Choice Chips" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/multiple-chips.gif"/>
     </td>
   </tr>
   <tr>
@@ -135,67 +46,67 @@ SafeSmartSelect allows you to easily convert your usual form select or dropdown 
       None
     </td>
     <td align="center">
-      <image alt="Multiple Choice Switch" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/multiple-switches.gif"/>
+      <image alt="Multiple Choice Switch" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/multiple-switches.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Custom Tile</td>
     <td align="center" colspan="2">
-      <image alt="Customize Tile" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/custom-tile.gif"/>
+      <image alt="Customize Tile" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/custom-tile.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Modal Filter</td>
     <td align="center" colspan="2">
-      <image alt="Modal Filter" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/modal-filter.gif"/>
+      <image alt="Modal Filter" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/modal-filter.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Modal Confirm</td>
     <td align="center" colspan="2">
-      <image alt="Modal Confirm" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/modal-confirm.gif"/>
+      <image alt="Modal Confirm" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/modal-confirm.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Modal Validation</td>
     <td align="center" colspan="2">
-      <image alt="Modal Validation" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/modal-validation.gif"/>
+      <image alt="Modal Validation" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/modal-validation.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Modal Selector</td>
     <td align="center" colspan="2">
-      <image alt="Modal Selector" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/modal-selector.gif"/>
+      <image alt="Modal Selector" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/modal-selector.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Modal Shape</td>
     <td align="center" colspan="2">
-      <image alt="Modal Shape" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/modal-shape.gif"/>
+      <image alt="Modal Shape" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/modal-shape.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Choice Items</td>
     <td align="center" colspan="2">
-      <image alt="Choice Items" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/choice-item.gif"/>
+      <image alt="Choice Items" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/choice-item.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Choice Grouped</td>
     <td align="center" colspan="2">
-      <image alt="Choice Grouped" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/choice-grouped.gif"/>
+      <image alt="Choice Grouped" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/choice-grouped.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Choice Builder</td>
     <td align="center" colspan="2">
-      <image alt="Choice Builder" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/screens/choice-builder.gif"/>
+      <image alt="Choice Builder" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/screens/choice-builder.gif"/>
     </td>
   </tr>
   <tr>
     <td align="left">Download APK</td>
     <td align="center" colspan="2">
-      <a href="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/build/SafeSmartSelect.apk"><image alt="Demo App" src="https://raw.githubusercontent.com/davigmacode/flutter_smart_select/master/demo/build/qr-apk.png"/></a>
+      <a href="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/build/SafeSmartSelect.apk"><image alt="Demo App" src="https://raw.githubusercontent.com/arif2k17/safe_smart_select/master/demo/build/qr-apk.png"/></a>
     </td>
   </tr>
 </tbody>
@@ -221,9 +132,9 @@ SafeSmartSelect allows you to easily convert your usual form select or dropdown 
 
 # Usage
 
-For a complete usage, please see the [example](https://pub.dev/packages/smart_select#-example-tab-).
+For a complete usage, please see the [example](https://pub.dev/packages/safe_smart_select#-example-tab-).
 
-To read more about classes and other references used by `smart_select`, see the [API Reference](https://pub.dev/documentation/smart_select/latest/).
+To read more about classes and other references used by `smart_select`, see the [API Reference](https://pub.dev/documentation/safe_smart_select/latest/).
 
 ## Single Choice
 
@@ -239,7 +150,7 @@ SafeSmartSelect<T>.single({
   String placeholder = 'Select one',
 
   // The current value of the single choice widget.
-  @required T value,
+  @required T selectedValue,
 
   // Called when single choice value changed
   @required ValueChanged<S2SingleState<T>> onChange,
@@ -269,7 +180,7 @@ List<S2Choice<String>> options = [
 Widget build(BuildContext context) {
   return SafeSmartSelect<String>.single(
     title: 'Frameworks',
-    value: value,
+    selectedValue: value,
     choiceItems: options,
     onChange: (state) => setState(() => value = state.value)
   );
@@ -290,7 +201,7 @@ SafeSmartSelect<T>.multiple({
   String placeholder = 'Select one',
 
   // The current value of the single choice widget.
-  @required List<T> value,
+  @required List<T> selectedValue,
 
   // Called when single choice value changed
   @required ValueChanged<S2MultiState<T>> onChange,
@@ -320,7 +231,7 @@ List<S2Choice<int>> frameworks = [
 Widget build(BuildContext context) {
   return SafeSmartSelect<int>.multiple(
     title: 'Frameworks',
-    value: value,
+    selectedValue: value,
     choiceItems: options,
     onChange: (state) => setState(() => value = state.value),
   );
@@ -387,7 +298,7 @@ SafeSmartSelect<String>.[single|multiple](
 
 ### Load Choice Item Asynchronously
 
-Please follow these [example](https://github.com/davigmacode/flutter_smart_select/blob/master/example/lib/features_option/option_async.dart)
+Please follow these [example](https://github.com/arif2k17/safe_smart_select/blob/master/example/lib/features_option/option_async.dart)
 
 ## Modal Configuration
 
@@ -1059,7 +970,7 @@ SafeSmartSelect<String>.multiple(
 # License
 
 ```
-Copyright (c) 2020 Irfan Vigma Taufik
+Copyright (c) 2020 Arifur Rahman
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

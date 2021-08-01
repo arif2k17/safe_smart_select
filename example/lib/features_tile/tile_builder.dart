@@ -37,7 +37,7 @@ class _FeaturesTileBuilderState extends State<FeaturesTileBuilder> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: SmartSelect<String>.multiple(
+                  child: SafeSmartSelect<String>.multiple(
                     title: 'Categories',
                     selectedValue: _categories,
                     choiceItems: choices.categories,
@@ -60,7 +60,7 @@ class _FeaturesTileBuilderState extends State<FeaturesTileBuilder> {
                   child: VerticalDivider(),
                 ),
                 Expanded(
-                  child: SmartSelect<String>.single(
+                  child: SafeSmartSelect<String>.single(
                     title: 'Sort By',
                     selectedValue: _sort,
                     choiceItems: choices.sorts,
@@ -81,7 +81,7 @@ class _FeaturesTileBuilderState extends State<FeaturesTileBuilder> {
               ],
             ),
           ),
-          SmartSelect<String>.multiple(
+          SafeSmartSelect<String>.multiple(
             title: 'Cars',
             selectedValue: _cars,
             choiceItems: S2Choice.listFrom<String, Map>(

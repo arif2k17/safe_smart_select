@@ -16,14 +16,14 @@ class _FeaturesSinglePageState extends State<FeaturesSinglePage> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Days',
           selectedValue: _day,
           choiceItems: choices.days,
           onChange: (selected) => setState(() => _day = selected.value),
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Month',
           selectedValue: _month,
           choiceItems: choices.months,

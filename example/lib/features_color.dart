@@ -20,7 +20,7 @@ class _FeaturesColorState extends State<FeaturesColor> {
 
   @override
   Widget build(BuildContext context) {
-    return SmartSelect<Color>.single(
+    return SafeSmartSelect<Color>.single(
       title: 'Color',
       selectedValue: _themeColor,
       onChange: (selected) {

@@ -21,7 +21,7 @@ class _FeaturesTileLeadingState extends State<FeaturesTileLeading> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Days',
           selectedValue: _day,
           choiceItems: choices.days,
@@ -34,7 +34,7 @@ class _FeaturesTileLeadingState extends State<FeaturesTileLeading> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Month',
           selectedValue: _month,
           choiceItems: choices.months,
@@ -51,7 +51,7 @@ class _FeaturesTileLeadingState extends State<FeaturesTileLeading> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Frameworks',
           selectedValue: _framework,
           choiceItems: choices.frameworks,
@@ -73,7 +73,7 @@ class _FeaturesTileLeadingState extends State<FeaturesTileLeading> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Super Hero',
           selectedValue: _hero,
           choiceItems: choices.heroes,

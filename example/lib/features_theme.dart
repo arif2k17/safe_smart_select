@@ -23,7 +23,7 @@ class _FeaturesThemeState extends State<FeaturesTheme> {
     return Row(
       children: <Widget>[
         Expanded(
-          child: SmartSelect<ThemeMode>.single(
+          child: SafeSmartSelect<ThemeMode>.single(
             title: 'Brightness',
             selectedValue: ThemePatrol.of(context).themeMode,
             onChange: (selected) {
@@ -87,7 +87,7 @@ class _FeaturesThemeState extends State<FeaturesTheme> {
           child: VerticalDivider(width: 1),
         ),
         Expanded(
-          child: SmartSelect<Color>.single(
+          child: SafeSmartSelect<Color>.single(
             title: 'Color',
             selectedValue: _themeColor,
             onChange: (selected) {

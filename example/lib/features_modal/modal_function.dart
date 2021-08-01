@@ -28,7 +28,7 @@ class _ProgrammaticModalState extends State<ProgrammaticModal> {
 
   @override
   Widget build(BuildContext context) {
-    return SmartSelect<String>.multiple(
+    return SafeSmartSelect<String>.multiple(
       key: _smartSelectKey,
       title: 'Fruit',
       selectedValue: _value,

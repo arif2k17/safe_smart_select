@@ -17,7 +17,7 @@ class _FeaturesSingleChipsState extends State<FeaturesSingleChips> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           selectedValue: _car,
           choiceItems: S2Choice.listFrom<String, Map>(
             source: choices.cars,
@@ -44,7 +44,7 @@ class _FeaturesSingleChipsState extends State<FeaturesSingleChips> {
           ),
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Category',
           selectedValue: _category,
           choiceItems: choices.categories,
@@ -63,7 +63,7 @@ class _FeaturesSingleChipsState extends State<FeaturesSingleChips> {
           ),
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Days',
           selectedValue: _day,
           choiceItems: choices.days,

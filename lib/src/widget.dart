@@ -50,7 +50,7 @@ typedef void S2ChoiceSelect<A, B>(A state, B choice);
 /// SmartSelect allows you to easily convert your usual form select or dropdown
 /// into dynamic page, popup dialog, or sliding bottom sheet with various choices input
 /// such as radio, checkbox, switch, chips, or even custom input.
-class SmartSelect<T> extends StatefulWidget {
+class SafeSmartSelect<T> extends StatefulWidget {
   /// The primary content of the widget.
   /// Used in trigger widget and header option
   final String? title;
@@ -138,7 +138,7 @@ class SmartSelect<T> extends StatefulWidget {
   final S2MultiBuilder<T>? multiBuilder;
 
   /// Default constructor
-  SmartSelect({
+  SafeSmartSelect({
     Key? key,
     this.title,
     this.placeholder,
@@ -371,7 +371,7 @@ class SmartSelect<T> extends StatefulWidget {
   ///
   /// The [modalFilterHint] is shortcut to [modalConfig.filterHint],
   /// [String] to display as hint in searchbar.
-  factory SmartSelect.single({
+  factory SafeSmartSelect.single({
     Key? key,
     String? title,
     String placeholder = 'Select one',
@@ -443,7 +443,7 @@ class SmartSelect<T> extends StatefulWidget {
     );
     S2GroupConfig defaultGroupConfig = const S2GroupConfig();
     S2ModalConfig defaultModalConfig = const S2ModalConfig();
-    return SmartSelect<T>(
+    return SafeSmartSelect<T>(
       key: key,
       title: title,
       placeholder: placeholder,
@@ -695,7 +695,7 @@ class SmartSelect<T> extends StatefulWidget {
   ///
   /// The [modalFilterHint] is shortcut to [modalConfig.filterHint],
   /// [String] to display as hint in searchbar.
-  factory SmartSelect.multiple({
+  factory SafeSmartSelect.multiple({
     Key? key,
     String? title,
     String placeholder = 'Select one or more',
@@ -766,7 +766,7 @@ class SmartSelect<T> extends StatefulWidget {
     );
     S2ModalConfig defaultModalConfig = const S2ModalConfig();
     S2GroupConfig defaultGroupConfig = const S2GroupConfig();
-    return SmartSelect<T>(
+    return SafeSmartSelect<T>(
       key: key,
       title: title,
       placeholder: placeholder,
@@ -852,7 +852,7 @@ class SmartSelect<T> extends StatefulWidget {
 }
 
 /// Smart Select State
-abstract class S2State<T> extends State<SmartSelect<T>> {
+abstract class S2State<T> extends State<SafeSmartSelect<T>> {
   /// State of the selected choice(s)
   covariant S2Selected<T>? selected;
 
@@ -1685,7 +1685,7 @@ abstract class S2State<T> extends State<SmartSelect<T>> {
   }
 
   @override
-  void didUpdateWidget(SmartSelect<T> oldWidget) {
+  void didUpdateWidget(SafeSmartSelect<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     // reset the initial choices
@@ -1786,7 +1786,7 @@ class S2SingleState<T> extends S2State<T?> {
   }
 
   @override
-  void didUpdateWidget(SmartSelect<T?> oldWidget) {
+  void didUpdateWidget(SafeSmartSelect<T?> oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     // reset the initial value
@@ -1990,7 +1990,7 @@ class S2MultiState<T> extends S2State<T> {
   }
 
   @override
-  void didUpdateWidget(SmartSelect<T> oldWidget) {
+  void didUpdateWidget(SafeSmartSelect<T> oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     // reset the initial value

@@ -16,7 +16,7 @@ class _FeaturesModalFilterState extends State<FeaturesModalFilter> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<String>.single(
+        SafeSmartSelect<String>.single(
           title: 'Car',
           placeholder: 'Choose one',
           selectedValue: _car,
@@ -43,7 +43,7 @@ class _FeaturesModalFilterState extends State<FeaturesModalFilter> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Smartphones',
           placeholder: 'Choose one',
           selectedValue: _smartphone,

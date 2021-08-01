@@ -33,7 +33,7 @@ class _FeaturesModalWidgetState extends State<FeaturesModalWidget> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<int>.single(
+        SafeSmartSelect<int>.single(
           title: 'Overall, how satisfied are you with smart_select package?',
           selectedValue: _question1,
           onChange: (selected) {
@@ -89,7 +89,7 @@ class _FeaturesModalWidgetState extends State<FeaturesModalWidget> {
             );
           },
         ),
-        SmartSelect<int>.multiple(
+        SafeSmartSelect<int>.multiple(
           title:
               'Which of following words would you use to describe smart_select?',
           selectedValue: _question2,

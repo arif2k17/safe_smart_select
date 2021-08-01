@@ -22,7 +22,7 @@ class _FeaturesChoicesBuilderState extends State<FeaturesChoicesBuilder> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 7),
-        SmartSelect<int>.single(
+        SafeSmartSelect<int>.single(
           title: 'Transportation',
           placeholder: 'Choose one',
           selectedValue: _commute,
@@ -87,7 +87,7 @@ class _FeaturesChoicesBuilderState extends State<FeaturesChoicesBuilder> {
           },
         ),
         const Divider(indent: 20),
-        SmartSelect<String>.multiple(
+        SafeSmartSelect<String>.multiple(
           title: 'Passengers',
           selectedValue: _user,
           onChange: (selected) => setState(() => _user = selected.value),
