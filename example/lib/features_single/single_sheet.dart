@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:safe_smart_select/smart_select.dart';
+import 'package:safe_smart_select/safe_smart_select.dart';
 import '../choices.dart' as choices;
 
 class FeaturesSingleSheet extends StatefulWidget {
